@@ -1,5 +1,5 @@
 {
-  "appName": "AppFlowy1",
+  "appName": "AppFlowyh",
   "defaultUsername": "Me",
   "welcomeText": "Welcome to @:appName",
   "githubStarText": "Star on GitHub",
@@ -8,6 +8,14 @@
   "title": "Title",
   "youCanAlso": "You can also",
   "and": "and",
+  "blockActions": {
+    "addBelowTooltip": "Click to add below",
+    "addAboveCmd": "Alt+click",
+    "addAboveMacCmd": "Option+click",
+    "addAboveTooltip": "to add above",
+    "dragTooltip": "Drag to move",
+    "openMenuTooltip": "Click to open menu"
+  },
   "signUp": {
     "buttonText": "Sign Up",
     "title": "Sign Up to @:appName",
@@ -61,7 +69,8 @@
   "disclosureAction": {
     "rename": "Rename",
     "delete": "Delete",
-    "duplicate": "Duplicate"
+    "duplicate": "Duplicate",
+    "openNewTab": "Open in a new tab"
   },
   "blankPageTitle": "Blank page",
   "newPageText": "New page",
@@ -73,6 +82,14 @@
       "fileName": "File name",
       "lastModified": "Last Modified",
       "created": "Created"
+    },
+    "confirmDeleteAll": {
+      "title": "Are you sure to delete all pages in Trash?",
+      "caption": "This action cannot be undone."
+    },
+    "confirmRestoreAll": {
+      "title": "Are you sure to restore all pages in Trash?",
+      "caption": "This action cannot be undone."
     }
   },
   "deletePagePrompt": {
@@ -112,7 +129,9 @@
     "quote": "Quote Block",
     "header": "Header",
     "highlight": "Highlight",
-    "color": "Color"
+    "color": "Color",
+    "addLink": "Add Link",
+    "link": "Link"
   },
   "tooltip": {
     "lightMode": "Switch to Light mode",
@@ -122,7 +141,8 @@
     "openMenu": "Click to open menu",
     "dragRow": "Long press to reorder the row",
     "viewDataBase": "View database",
-    "referencePage": "This {name} is referenced"
+    "referencePage": "This {name} is referenced",
+    "addBlockBelow": "Add a block below"
   },
   "sideBar": {
     "closeSidebar": "Close side bar",
@@ -154,7 +174,13 @@
     "tryAgain": "Try again",
     "discard": "Discard",
     "replace": "Replace",
-    "insertBelow": "Insert Below"
+    "insertBelow": "Insert Below",
+    "upload": "Upload",
+    "edit": "Edit",
+    "delete": "Delete",
+    "duplicate": "Duplicate",
+    "done": "Done",
+    "putback": "Put Back"
   },
   "label": {
     "welcome": "Welcome!",
@@ -183,16 +209,33 @@
       "language": "Language",
       "user": "User",
       "files": "Files",
-      "open": "Open Settings"
+      "open": "Open Settings",
+      "supabaseSetting": "Supabase Setting"
     },
     "appearance": {
+      "fontFamily": {
+        "label": "Font Family",
+        "search": "Search"
+      },
       "themeMode": {
         "label": "Theme Mode",
         "light": "Light Mode",
         "dark": "Dark Mode",
         "system": "Adapt to System"
       },
-      "theme": "Theme"
+      "themeUpload": {
+        "button": "Upload",
+        "description": "Upload your own AppFlowy theme using the button below.",
+        "failure": "The theme that was uploaded had an invalid format.",
+        "loading": "Please wait while we validate and upload your theme...",
+        "uploadSuccess": "Your theme was uploaded successfully",
+        "deletionFailure": "Failed to delete the theme. Try to delete it manually.",
+        "filePickerDialogTitle": "Choose a .flowy_plugin file",
+        "urlUploadFailure": "Failed to open url: {}"
+      },
+      "theme": "Theme",
+      "builtInsLabel": "Built-in Themes",
+      "pluginsLabel": "Plugins"
     },
     "files": {
       "copy": "Copy",
@@ -235,6 +278,17 @@
       "icon": "Icon",
       "selectAnIcon": "Select an icon",
       "pleaseInputYourOpenAIKey": "please input your OpenAI key"
+    },
+    "shortcuts": {
+      "shortcutsLabel": "Shortcuts",
+      "command": "Command",
+      "keyBinding": "Keybinding",
+      "addNewCommand": "Add New Command",
+      "updateShortcutStep": "Press desired key combination and press ENTER",
+      "shortcutIsAlreadyUsed": "This shortcut is already used for: {conflict}",
+      "resetToDefault": "Reset to default keybindings",
+      "couldNotLoadErrorMsg": "Could not load shortcuts, Try again",
+      "couldNotSaveErrorMsg": "Could not save shortcuts, Try again"
     }
   },
   "grid": {
@@ -244,7 +298,8 @@
       "filter": "Filter",
       "sort": "Sort",
       "sortBy": "Sort by",
-      "Properties": "Properties",
+      "properties": "Properties",
+      "reorderPropertiesTooltip": "Drag to reorder properties",
       "group": "Group",
       "addFilter": "Add Filter",
       "deleteFilter": "Delete filter",
@@ -385,6 +440,9 @@
         "createANewCalendar": "Create a new Calendar"
       }
     },
+    "selectionMenu": {
+      "outline": "Outline"
+    },
     "plugins": {
       "referencedBoard": "Referenced Board",
       "referencedGrid": "Referenced Grid",
@@ -407,6 +465,8 @@
       "smartEditCouldNotFetchKey": "Could not fetch OpenAI key",
       "smartEditDisabled": "Connect OpenAI in Settings",
       "discardResponse": "Do you want to discard the AI responses?",
+      "createInlineMathEquation": "Create equation",
+      "toggleList": "Toggle List",
       "cover": {
         "changeCover": "Change Cover",
         "colors": "Colors",
@@ -449,6 +509,53 @@
         "center": "Center",
         "right": "Right",
         "defaultColor": "Default"
+      },
+      "image": {
+        "copiedToPasteBoard": "The image link has been copied to the clipboard"
+      },
+      "outline": {
+        "addHeadingToCreateOutline": "Add headings to create a table of contents."
+      }
+    },
+    "textBlock": {
+      "placeholder": "Type '/' for commands"
+    },
+    "title": {
+      "placeholder": "Untitled"
+    },
+    "imageBlock": {
+      "placeholder": "Click to add image",
+      "upload": {
+        "label": "Upload",
+        "placeholder": "Click to upload image"
+      },
+      "url": {
+        "label": "Image URL",
+        "placeholder": "Enter image URL"
+      },
+      "support": "Image size limit is 5MB. Supported formats: JPEG, PNG, GIF, SVG",
+      "error": {
+        "invalidImage": "Invalid image",
+        "invalidImageSize": "Image size must be less than 5MB",
+        "invalidImageFormat": "Image format is not supported. Supported formats: JPEG, PNG, GIF, SVG",
+        "invalidImageUrl": "Invalid image URL"
+      }
+    },
+    "codeBlock": {
+      "language": {
+        "label": "Language",
+        "placeholder": "Select language"
+      }
+    },
+    "inlineLink": {
+      "placeholder": "Paste or type a link",
+      "url": {
+        "label": "Link URL",
+        "placeholder": "Enter link URL"
+      },
+      "title": {
+        "label": "Link Title",
+        "placeholder": "Enter link title"
       }
     }
   },
@@ -484,5 +591,35 @@
     "title": "AppFlowy Error",
     "howToFixFallback": "We're sorry for the inconvenience! Submit an issue on our GitHub page that describes your error.",
     "github": "View on GitHub"
+  },
+  "search": {
+    "label": "Search",
+    "placeholder": {
+      "actions": "Search actions..."
+    }
+  },
+  "message": {
+    "copy": {
+      "success": "Copied!",
+      "fail": "Unable to copy"
+    }
+  },
+  "unSupportBlock": "The current version does not support this Block.",
+  "views": {
+    "deleteContentTitle": "Are you sure want to delete the {pageType}?",
+    "deleteContentCaption": "if you delete this {pageType}, you can restore it from the trash."
+  },
+  "colors": {
+    "custom": "Custom",
+    "default": "Default",
+    "red": "Red",
+    "orange": "Orange",
+    "yellow": "Yellow",
+    "green": "Green",
+    "blue": "Blue",
+    "purple": "Purple",
+    "pink": "Pink",
+    "brown": "Brown",
+    "gray": "Gray"
   }
 }
